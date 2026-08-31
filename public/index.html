@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Permission Twin OS</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <section class="hero hero--premium">
+        <div class="hero__copy">
+          <p class="eyebrow">Agent Governance Runtime</p>
+          <h1>Permission Twin OS</h1>
+          <p class="lede">
+            Le runtime de gouvernance pour agents IA. Il transforme une action brute
+            en intention explicable, produit un preflight d'impact, applique des
+            policies lisibles et escalade vers l'humain quand le risque l'exige.
+          </p>
+          <div class="hero__chips">
+            <span class="chip">Preflight runtime</span>
+            <span class="chip">Policy engine</span>
+            <span class="chip">Human escalation</span>
+            <span class="chip">Audit trail exportable</span>
+          </div>
+          <div class="hero__cta">
+            <div class="cta-card">
+              <p class="eyebrow">La promesse</p>
+              <h2>La couche de confiance entre les agents IA et leur environnement d'execution.</h2>
+              <p>
+                Permission Twin OS transforme une action brute en intention explicable,
+                applique une policy lisible, escalade quand il le faut, puis journalise
+                toute la decision dans un audit trail.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__side">
+          <div class="auth-card">
+            <p class="eyebrow">Session</p>
+            <div class="actions">
+              <input id="pinInput" type="password" placeholder="PIN local" class="inline-input" />
+              <button id="unlockButton" type="button">Debloquer</button>
+              <button id="lockButton" type="button" class="button-secondary">Verrouiller</button>
+            </div>
+            <div id="sessionBanner" class="card-empty">Session verrouillee.</div>
+          </div>
+          <div class="positioning-card">
+            <p class="eyebrow">Positionnement</p>
+            <h2>SDK + runtime de confiance</h2>
+            <p>
+              Le point d'entree n'est pas le grand public. Le bon client, ce sont les
+              equipes qui construisent des agents et ont besoin de gouvernance, de
+              preflight, de policy et d'audit.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel panel--landing">
+        <div class="landing-grid">
+          <article class="landing-card landing-card--problem">
+            <p class="eyebrow">Le probleme</p>
+            <h2>Les agents savent agir, mais rien ne gouverne proprement comment ils agissent.</h2>
+            <p>
+              Les rules vivent dans le prompt ou dans du code disperse. Il y a peu de
+              visibilite avant execution, peu d'explicabilite, et rarement un audit trail
+              exploitable pour une equipe produit ou un client enterprise.
+            </p>
+          </article>
+
+          <article class="landing-card">
+            <p class="eyebrow">La solution</p>
+            <h2>Un runtime de gouvernance avant execution.</h2>
+            <ul class="feature-list">
+              <li>Analyse l'intention d'une action, pas seulement son effet technique.</li>
+              <li>Produit un preflight d'impact et une classification de risque.</li>
+              <li>Applique des policies lisibles par un humain.</li>
+              <li>Escalade vers validation humaine quand le seuil est depasse.</li>
+              <li>Journalise l'execution dans un audit trail exportable.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel panel--landing">
+        <div class="panel__header">
+          <div>
+            <p class="eyebrow">Pourquoi maintenant</p>
+            <h2>La gouvernance d'intention devient une couche d'infrastructure IA.</h2>
+          </div>
+        </div>
+        <div class="story-grid">
+          <article class="story-card">
+            <h3>Developpeurs d'agents</h3>
+            <p>Ils ont besoin d'un composant reutilisable pour ne pas reinventer policies, queue humaine et audit a chaque projet.</p>
+          </article>
+          <article class="story-card">
+            <h3>Equipes produit IA</h3>
+            <p>Elles doivent montrer comment un agent decide, quand il escalade et comment une action a ete validee.</p>
+          </article>
+          <article class="story-card">
+            <h3>Clients enterprise</h3>
+            <p>Ils demanderont de la traçabilite, de l'explicabilite et un controle plus fin que de simples permissions binaires.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel panel--landing">
+        <div class="panel__header">
+          <div>
+            <p class="eyebrow">Developer SDK</p>
+            <h2>Brancher un agent sur le runtime en quelques lignes.</h2>
+          </div>
+        </div>
+        <div class="landing-grid">
+          <article class="landing-card">
+            <p class="eyebrow">Endpoint</p>
+            <h2><code>POST /api/sdk/preflight</code></h2>
+            <p>
+              Un agent externe envoie une action brute. Le runtime retourne une intention,
+              un risque, une decision de gouvernance et l'etat d'execution.
+            </p>
+            <pre class="code-block">{
+  "title": "SDK demo local artifact",
+  "actionType": "create_file",
+  "payload": {
+    "relativePath": "sdk/demo-output.txt",
+    "content": "created through sdk"
+  }
+}</pre>
+          </article>
+
+          <article class="landing-card">
+            <p class="eyebrow">Retour runtime</p>
+            <h2>Decision exploitable par un agent</h2>
+            <pre class="code-block">{
+  "intent": {
+    "summary": "Creerait un fichier local..."
+  },
+  "risk": {
+    "level": "low"
+  },
+  "decision": {
+    "status": "executed",
+    "requiresApproval": false,
+    "nextStep": "completed"
+  }
+}</pre>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel panel--landing">
+        <div class="panel__header">
+          <div>
+            <p class="eyebrow">Agent Registry</p>
+            <h2>Tokens locaux pour integrer des agents externes.</h2>
+          </div>
+        </div>
+        <div class="landing-grid">
+          <article class="landing-card">
+            <p class="eyebrow">Creer un agent</p>
+            <form id="agentForm" class="form-grid">
+              <label>
+                Nom de l'agent
+                <input id="agentNameInput" type="text" placeholder="Internal File Agent" />
+              </label>
+              <label>
+                Description
+                <textarea id="agentDescriptionInput" rows="3" placeholder="Agent de test pour workflows locaux"></textarea>
+              </label>
+              <div class="actions">
+                <button id="createAgentButton" type="submit">Creer l'agent</button>
+              </div>
+            </form>
+          </article>
+
+          <article class="landing-card">
+            <p class="eyebrow">Agents enregistres</p>
+            <div id="agentList" class="list"></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel panel--story">
+        <div class="panel__header">
+          <div>
+            <p class="eyebrow">Pourquoi ca compte</p>
+            <h2>De l'action brute a la gouvernance d'intention</h2>
+          </div>
+        </div>
+        <div class="story-grid">
+          <article class="story-card">
+            <h3>Sans runtime</h3>
+            <p>L'agent agit directement, sans vraie policy lisible, sans escalade propre et sans audit trail humain.</p>
+          </article>
+          <article class="story-card">
+            <h3>Avec Permission Twin OS</h3>
+            <p>L'action passe par un preflight, une classification de risque, une policy et un journal exploitable.</p>
+          </article>
+          <article class="story-card">
+            <h3>Valeur produit</h3>
+            <p>Les equipes agents obtiennent une couche de confiance avant execution, sans reinventer la gouvernance a chaque projet.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="summary-strip">
+        <div id="onboardingGrid" class="onboarding-grid"></div>
+      </section>
+
+      <section class="panel panel--demo">
+        <div class="panel__header">
+          <div>
+            <p class="eyebrow">Agent Workflows</p>
+            <h2>Scenarios de preflight</h2>
+          </div>
+        </div>
+        <p class="section-copy">
+          Lance un scenario pour voir le runtime analyser une intention, classer le risque,
+          appliquer la policy puis soit executer, soit escalader vers la queue humaine.
+        </p>
+        <div class="demo-guide">
+          <div class="demo-step">
+            <span>1</span>
+            <p>Debloque la session avec le PIN local.</p>
+          </div>
+          <div class="demo-step">
+            <span>2</span>
+            <p>Lance un scenario pour voir une action brute devenir intention gouvernee.</p>
+          </div>
+          <div class="demo-step">
+            <span>3</span>
+            <p>Observe la queue, la policy, puis l'audit trail.</p>
+          </div>
+        </div>
+        <div id="demoGrid" class="demo-grid"></div>
+      </section>
+
+      <section class="grid grid--metrics">
+        <article class="panel">
+          <div class="panel__header">
+            <div>
+              <p class="eyebrow">Runtime Console</p>
+              <h2>Preflight Lab</h2>
+            </div>
+            <div class="badge" id="modeBadge">Execution gouvernee</div>
+          </div>
+          <p class="section-copy">
+            Le laboratoire de preflight montre comment un agent passe d'une demande brute
+            a une action gouvernee, avec profil, workspace, policy et audit trail.
+          </p>
+
+          <form id="actionForm" class="form-grid">
+            <div class="two-col">
+              <label>
+                Profil d'agent
+                <select id="profileSelect"></select>
+              </label>
+
+              <label>
+                Workspace
+                <select id="workspaceSelect"></select>
+              </label>
+            </div>
+
+            <div class="two-col">
+              <label>
+                Preset
+                <select id="presetSelect"></select>
+              </label>
+
+              <label>
+                Type d'action
+                <select id="typeSelect">
+                  <option value="create_file">create_file</option>
+                  <option value="open_url">open_url</option>
+                  <option value="launch_app">launch_app</option>
+                  <option value="append_memory">append_memory</option>
+                  <option value="list_directory">list_directory</option>
+                </select>
+              </label>
+            </div>
+
+            <label>
+              Titre
+              <input id="titleInput" type="text" />
+            </label>
+
+            <label>
+              Payload JSON
+              <textarea id="payloadInput" rows="8"></textarea>
+            </label>
+
+            <label>
+              Raisonnement
+              <textarea id="reasoningInput" rows="4"></textarea>
+            </label>
+
+            <div class="actions">
+              <button type="submit">Lancer le preflight</button>
+              <button id="refreshButton" type="button" class="button-secondary">Rafraichir</button>
+              <button id="exportButton" type="button" class="button-secondary">Exporter l'audit trail</button>
+            </div>
+          </form>
+        </article>
+
+        <article class="panel">
+          <div class="panel__header">
+            <div>
+              <p class="eyebrow">Intent Preview</p>
+              <h2>Preflight</h2>
+            </div>
+          </div>
+          <div id="previewCard" class="card-empty">Aucun preflight lance.</div>
+          <div class="actions">
+            <button id="approveButton" type="button" disabled>Approuver et executer</button>
+            <button id="denyButton" type="button" class="button-secondary" disabled>Refuser / escalader</button>
+          </div>
+        </article>
+      </section>
+
+      <section class="grid">
+        <article class="panel">
+          <div class="panel__header">
+            <div>
+              <p class="eyebrow">Runtime Signal</p>
+              <h2>Etat de gouvernance</h2>
+            </div>
+          </div>
+          <dl id="statsGrid" class="stats-grid"></dl>
+          <div id="insightStrip" class="insight-strip"></div>
+        </article>
+
+        <article class="panel">
+          <div class="panel__header">
+            <div>
+              <p class="eyebrow">Human Escalation</p>
+              <h2>Actions en attente</h2>
+            </div>
+          </div>
+          <div class="actions actions--compact">
+            <button id="approveAllQueueButton" type="button">Tout approuver</button>
+            <button id="denyAllQueueButton" type="button" class="button-secondary">Tout refuser</button>
+          </div>
+          <div id="queueList" class="list"></div>
+        </article>
+
+        <article class="panel">
+          <div class="panel__header">
+            <div>
+              <p class="eyebrow">Policies</p>
+              <h2>Matrice de gouvernance</h2>
+            </div>
+          </div>
+          <form id="policyForm" class="policy-grid"></form>
+          <div class="actions">
+            <button id="savePolicyButton" type="button">Enregistrer la policy</button>
+          </div>
+        </article>
+
+        <article class="panel">
+          <div class="panel__header">
+            <div>
+              <p class="eyebrow">Risk Engine</p>
+              <h2>Classification du risque</h2>
+            </div>
+          </div>
+          <form id="riskForm" class="policy-grid"></form>
+          <div class="actions">
+            <button id="saveRiskButton" type="button">Enregistrer les risques</button>
+          </div>
+        </article>
+
+        <article class="panel panel--wide">
+          <div class="panel__header">
+            <div>
+              <p class="eyebrow">Audit Trail</p>
+              <h2>Journal d'actions</h2>
+            </div>
+          </div>
+          <div class="filter-row">
+            <input id="searchInput" type="text" placeholder="Rechercher dans le journal" />
+            <select id="statusFilter">
+              <option value="all">Tous statuts</option>
+              <option value="simulated">simulated</option>
+              <option value="executed">executed</option>
+              <option value="denied">denied</option>
+              <option value="failed">failed</option>
+            </select>
+          </div>
+          <div id="actionsList" class="list"></div>
+        </article>
+
+        <article class="panel">
+          <div class="panel__header">
+            <div>
+              <p class="eyebrow">Demo Ops</p>
+              <h2>Historique des preflights guides</h2>
+            </div>
+          </div>
+          <div id="demoRunsList" class="list"></div>
+        </article>
+
+        <article class="panel">
+          <div class="panel__header">
+            <div>
+              <p class="eyebrow">Snapshots</p>
+              <h2>Etat avant / apres execution</h2>
+            </div>
+          </div>
+          <div id="snapshotList" class="list"></div>
+        </article>
+
+        <article class="panel">
+          <div class="panel__header">
+            <div>
+              <p class="eyebrow">Memory Fabric</p>
+              <h2>Memoire de gouvernance</h2>
+            </div>
+          </div>
+          <div class="filter-row">
+            <select id="memoryKindFilter">
+              <option value="all">Tous types</option>
+              <option value="system">system</option>
+              <option value="policy">policy</option>
+              <option value="product">product</option>
+              <option value="profile">profile</option>
+              <option value="action">action</option>
+              <option value="execution">execution</option>
+              <option value="workspace">workspace</option>
+              <option value="risk">risk</option>
+              <option value="user">user</option>
+            </select>
+          </div>
+          <div id="memoryList" class="list"></div>
+        </article>
+      </section>
+    </main>
+    <script src="./main.js"></script>
+  </body>
+  </html>

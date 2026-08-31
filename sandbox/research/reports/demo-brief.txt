@@ -1,0 +1,3 @@
+Permission Twin OS a produit ce brief dans le workspace Research.
+Mode: Builder
+Validation: locale

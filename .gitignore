@@ -1,0 +1,12 @@
+node_modules/
+circuits/ptau/
+circuits/compiled/
+**/twin-store.json
+.env
+*.log
+*.bak*
+.DS_Store
+build/
+mandate-proof.sym
+tests/tmp-*
+server.js.bak-*
