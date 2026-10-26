@@ -2,6 +2,8 @@
 
 **Runtime de gouvernance pour agents IA autonomes + Standard Agent Mandate**
 
+> **English summary.** Permission Twin OS is a governance runtime that sits between an AI agent and its execution environment: each action gets an impact preflight and a risk score, readable policies are applied, risky actions escalate to a human, and everything is written to an audit trail. An optional ZK module and the Agent Mandate Standard (AMS) let an agent prove it is authorized to act without revealing its mandate. **v0.4 alpha, proof of concept, not for production.** The rest of this README is in French.
+
 Permission Twin OS se place entre un agent IA et son environnement d'exécution pour transformer toute action brute en intention explicable, produire un preflight d'impact, classer le risque, appliquer des policies lisibles, escalader vers un humain si besoin, et journaliser dans un audit trail.
 
 Avec le **module ZK** et le **standard AMS**, Permission Twin OS permet aux agents de **prouver qu'ils ont le droit d'agir sans révéler leur mandat**.
@@ -20,7 +22,7 @@ Avec le **module ZK** et le **standard AMS**, Permission Twin OS permet aux agen
 
 ```bash
 # Cloner et installer
-git clone https://github.com/your-username/permission-twin-os.git
+git clone https://github.com/Ouoba2/permission-twin-os.git
 cd permission-twin-os
 npm install
 
